@@ -5,7 +5,6 @@
 
 
 arrBinaries=($(find /usr/bin -type f -executable | xargs -I{} basename {}))
-#arrBinaries=($(ls -ltra /usr/bin | awk {'print $NF;'}))
 
 	# Find all binaries in /usr/bin that depend on libselinux.
 
