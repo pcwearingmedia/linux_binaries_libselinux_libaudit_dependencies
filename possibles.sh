@@ -10,11 +10,12 @@ arrBinaries=($(find /usr/bin -type f -executable | xargs -I{} basename {}))
 
 function getDependencies()
 {
+	echo "Dependencies on $1: " 
 	start=`date +%s`
 	for i in "${arrBinaries[@]}"
 		do
 			ldds=$(ldd /usr/bin/$i)
-			if echo $ldds | grep $1; then
+			if echo $ldds | grep -q $1; then
 				echo "Command: $i"
 			fi
 	done
