@@ -22,3 +22,11 @@ function getDependencies()
 }
 
 
+runtime=$((end-start))
+getDependencies "libselinux"
+runtime2=$((end-start))
+getDependencies "libaudit"
+
+echo "Time, libselinux dependencies: $runtime"
+echo "Time, libaudit dependencies: $runtime2"
+
