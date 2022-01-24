@@ -2,6 +2,7 @@
 
 # Author: P-C Markovski
 # Purpose: Find all binaries in /usr/bin that depend on libselinux and libaudit .so files.
+# Version: 1.0
 
 arrBinaries=($(find /usr/bin -type f -executable | xargs -I{} basename {}))
 
@@ -22,8 +23,8 @@ function getDependencies()
 	end=`date +%s`
 }
 
-
-runtime=$((end-start))
+	# Measure the runtime of two calls to the getDependencies() function.
+runtime=$((end-start)) # ToDo: start and end to be global variables?
 getDependencies "libselinux"
 runtime2=$((end-start))
 getDependencies "libaudit"
