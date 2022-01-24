@@ -1,6 +1,7 @@
 
 
-Features
-	Find all binaries that depend on libselinux and libaudit. Print the names of the dependent binaries, and the time it takes to run ldd on all binaries.
+Purpose: Find all binaries that depend on libselinux and libaudit. Print the names of the dependent binaries, and the time it takes to run ldd on all binaries.
+Author: P-C Markovski
+Version: 1.0
 
 To Do
